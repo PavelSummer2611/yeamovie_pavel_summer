@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-export default function Dropdown({ placeholder, options, onSelect }) {
+const Dropdown = React.memo( function Dropdown({ placeholder, options, onSelect }) {
 	const [selected, setSelected] = useState("");
 
 	const handleSelect = (option) => {
@@ -22,4 +22,6 @@ export default function Dropdown({ placeholder, options, onSelect }) {
 			))}
 		</select>
 	);
-}
+})
+
+export default Dropdown

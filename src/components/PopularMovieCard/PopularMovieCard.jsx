@@ -1,7 +1,7 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 
-export default function PopularMovieCard({ movie }) {
+function PopularMovieCard({ movie }) {
 	const navigate = useNavigate();
 
 	const watchMovie = (id) => {
@@ -9,10 +9,7 @@ export default function PopularMovieCard({ movie }) {
 	};
 
 	return (
-		<div
-			onClick={() => watchMovie(movie.id)}
-			className="flex flex-col justify-between "
-		>
+		<div className="flex flex-col justify-between ">
 			<div
 				className="relative w-full aspect-square flex items-center
             justify-center overflow-hidden rounded-lg group"
@@ -47,3 +44,5 @@ export default function PopularMovieCard({ movie }) {
 		</div>
 	);
 }
+
+export default PopularMovieCard;

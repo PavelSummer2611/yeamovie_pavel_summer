@@ -1,5 +1,6 @@
 import React from "react";
 import { Link, useLocation } from "react-router-dom";
+import FooterNavLink from "./FooterNavLink";
 
 export default function Footer() {
 	const location = useLocation();
@@ -10,23 +11,23 @@ export default function Footer() {
 		}
 	};
 	return (
-		<div className="bg-[rgb(10,15,44)] w-full p-15 text-white  ">
+		<footer className="bg-[rgb(10,15,44)] w-full p-15 text-white  ">
 			<div className="flex justify-between items-center gap-4">
 				<Link to="/" onClick={handleHomeClick}>
-					<div className="text-2xl font-bold transition-transform duration-300 hover:scale-105 ">YeaMovie</div>
+					<div className="text-2xl font-bold transition-transform duration-300 hover:scale-105 ">
+						YeaMovie
+					</div>
 				</Link>
-				<div className="flex gap-3 text-sm font-roboto items-center">
-					<Link to="/" onClick={handleHomeClick}>
-						<button className="text-[10px] hover:underline cursor-pointer">Главная</button>
-					</Link>
-					<Link to="/popular/movie">
-						<button className="text-[10px] hover:underline cursor-pointer">Популярные фильмы</button>
-					</Link>
-					<Link to="/popular/tv-series">
-						<button className="text-[10px] hover:underline cursor-pointer">Популярные сериалы</button>
-					</Link>
-				</div>
+				<nav className="flex gap-3 text-sm font-roboto items-center">
+					<FooterNavLink to="/" onClick={handleHomeClick}>
+						Главная
+					</FooterNavLink>
+					<FooterNavLink to="/popular/movie">Популярные фильмы</FooterNavLink>
+					<FooterNavLink to="/popular/tv-series">
+						Популярные сериалы
+					</FooterNavLink>
+				</nav>
 			</div>
-		</div>
+		</footer>
 	);
 }
